@@ -3,6 +3,9 @@
 
 <h4 class="text-center"><#LANG_HELP#></h4>
 <p style="text-decoration: underline;"><#LANG_USE_IN_SCRIPT#></p>
+
+<p><a href="https://mjdm.ru/forum/viewtopic.php?f=5&t=2031">Форум</a></p>
+
 <p>
 include_once(DIR_MODULES.'app_nut/app_nut.class.php');<br>
 $nut=new app_nut();
@@ -62,4 +65,14 @@ $nut=new app_nut();
     port = auto
     desc = "APC ES525"
     serial = NB0637019541
+
+[nutdev1]
+        driver = "usbhid-ups"
+        port = "auto"
+        vendorid = "051D"
+        productid = "0002"
+        product = "Back-UPS CS 500 FW:808.q7.I USB FW:q7"
+        serial = "NB0623017848  "
+        vendor = "American Power Conversion"
+        bus = "bus-0"
 </code>
