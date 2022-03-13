@@ -1,1 +1,6 @@
-# majormodo-app_nut
+majormodo-app_nut
+========================
+Network UPS Tools
+
+
+http://smartliving.ru/
