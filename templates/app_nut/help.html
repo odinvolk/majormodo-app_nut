@@ -32,4 +32,34 @@ $nut=new app_nut();
 <br/>
 <br/>
 <#LANG_EXAMPLE#>: <#LANG_NUT_QUICK_BATTERY_TEST#><br/>
-<code>$nut->control('myups', 'instcmd', 'test.battery.start.quick');</code> 
+<code>$nut->control('myups', 'instcmd', 'test.battery.start.quick');</code>
+
+<p>Линуксовый скрипт nut_mqtt, который пишет параметры UPS в MQTT.<br/>
+А дальше из MQTT что угодно делайте. Я использую для графиков.<br/>
+Подправьте только переменную UPS на имя своего бесперебойника.<br/>
+В топик ups.status заносится цифра, которая соответствует статусу УПС: от_сети|от_батарей|разряжен|и_т.д. С цифровым значением удобнее рисовать графики. В разных УПС статус может отличаться.</p>
+<p>Скрипт лежит /modules/app_nut/nut_mqtt.sh</p>
+
+<p>Запускаем кроном</p>
+
+<code>* * * * * root /root/nut_mqtt 2>/dev/nul</code>
+
+<p>Примеры:</p>
+<p>[](http://vladimir-stupin.blogspot.com/201 ... 500va.html)</p>
+<p>[](https://www.opennet.ru/base/sys/smart_ups_nut.txt.html)</p>
+
+<p>Конфиг</p>
+
+<code>
+[es550]
+    driver = usbhid-ups
+    port = auto
+    desc = "APC ES550"
+    serial = 5B1420T07458
+
+[es525]
+    driver = usbhid-ups
+    port = auto
+    desc = "APC ES525"
+    serial = NB0637019541
+</code>
